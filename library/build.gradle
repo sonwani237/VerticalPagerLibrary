@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -33,26 +33,82 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'VerticalViewPager'
+def siteUrl = "https://github.com/sonwani237/VerticlePagerLibrary"
+def gitUrl = "https://github.com/sonwani237/VerticlePagerLibrary.git"
 
-    publishedGroupId = 'com.d3developers.verticalviewpager'
-    libraryName = 'VerticalViewPager'
-    artifact = 'VerticalViewPager'
+group = "com.d3developers.verticalviewpager"
 
-    libraryDescription = 'A wrapper for Facebook Native Like Button (LikeView) on Android'
+version = '1.0.2'
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper paramters
+        pom {
+            project {
+                packaging 'aar'
 
-    siteUrl = 'https://github.com/nuuneoi/FBLikeAndroid'
-    gitUrl = 'https://github.com/nuuneoi/FBLikeAndroid.git'
+                name 'verticalviewpager'
+                url siteUrl
 
-    libraryVersion = '0.9.3'
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'sonwani237'
+                        name 'Divyanshu Sonwani'
+                        email 'divyanshusonwani@hotmail.com'
+                    }
+                }
 
-    developerId = 'nuuneoi'
-    developerName = 'Sittiphol Phanvilai'
-    developerEmail = 'sittiphol@gmail.com'
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
 
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+
+bintray {
+    user = 'sonwani237'
+    key = 'b958324d5df20986ff93f998e43e1b03d1593a7f'
+
+    configurations = ['archives']
+
+    pkg {
+        repo = "VerticalVeiwPager"
+        name = "VerticalViewPager"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
 }
