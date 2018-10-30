@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">VerticelPagerLibrary</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="volley_description">In this android volley tutorial, we’ll be implementing the Volley library in our application.\nNetwork Requests in a Volley are added to a RequestQueue. Instead of creating a new instance of RequestQueue every time, we follow the singleton pattern by creating a single instance of RequestQueue throughout our application.</string>
+    <string name="volley_url">https://developer.android.com/training/volley/</string>
+    <string name="dagger_description">In this tutorial, we’ll discuss and implement Dependency Injection (DI) in our android application.</string>
+    <string name="dagger_url">https://medium.com/@harivigneshjayapalan/dagger-2-for-android-beginners-dagger-2-part-i-f2de5564ab25</string>
+    <string name="geocoder_url">https://developer.android.com/reference/android/location/Geocoder</string>
+    <string name="geocoder_description">Android Geocoder class is used for reverse geocoding i.e. retrieving the address from the location on the Google Map.\n Geocoding refers to transforming street address or any address into latitude and longitude. Reverse Geocoding refers to transforming latitude and longitude into its corresponding street address.</string>
+    <string name="notification_url">https://developer.android.com/training/notify-user/build-notification</string>
+    <string name="notification_description">Android Notification Direct Reply action lets us reply to the notification message, it’s very popular with chat notifications such as Whatsapp and Facebook messenger notification messages.\nAndroid Nougat has introduced several new features. It offers some awesome features such as Inline Reply Actions and Bundled Notifications. In this tutorial, we’ll be implementing Inline Replies in our application</string>
+    <string name="recyclerview_url">https://developer.android.com/guide/topics/ui/layout/recyclerview</string>
+    <string name="recyclerview_description">We’ll be developing a RecyclerView Android app with contextual toolbar to let us select, delete or mark the rows of a RecyclerView. Furthermore, we’ll place dividers between RecyclerView rows.</string>
+
+</resources>
