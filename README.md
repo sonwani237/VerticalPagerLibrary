@@ -8,8 +8,8 @@ A Vertical ViewPager Like InShorts App https://goo.gl/TYjZxm just swipe up or do
 
 # Step 2: Add it in your build.gradle :
 
-`<com.d3developers.verticalviewpager.VerticalViewPager
-
+`
+<com.d3developers.verticalviewpager.VerticalViewPager
                         android:layout_width="match_parent"
                         
                         android:layout_height="match_parent"
