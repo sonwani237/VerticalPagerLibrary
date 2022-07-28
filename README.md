@@ -8,10 +8,10 @@ A Vertical ViewPager Like InShorts App https://goo.gl/TYjZxm just swipe up or do
 
 # Step 2: Usage :
 
-`<com.d3developers.verticalviewpager.VerticalViewPager
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/viewpager"/>`
+```<com.d3developers.verticalviewpager.VerticalViewPager
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:id="@+id/viewpager"/>```
 
 # License
 Apache License, Version 2.0
